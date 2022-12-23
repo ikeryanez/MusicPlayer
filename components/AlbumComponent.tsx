@@ -20,6 +20,7 @@ export default AlbumComponent
 const styles = StyleSheet.create({
   container: {
     width: 150,
+    margin:5
   },
   cover:{
     width: '100%',
