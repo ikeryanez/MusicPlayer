@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from '../components/Themed'
+import { View, Text } from 'react-native'
 
 const SearchScreen = () => {
   return (
