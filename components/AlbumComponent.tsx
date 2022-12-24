@@ -10,7 +10,7 @@ const AlbumComponent = (props: AlbumProps) => {
   return (
     <View style = {styles.container}>
         <Image style = {styles.cover} source = {{uri: props.album.coverUrl}} />
-        <Text style = {styles.text}> {props.album.artists} </Text>
+        <Text numberOfLines={2} style = {styles.text}> {props.album.artists} </Text>
     </View>
   )
 }
