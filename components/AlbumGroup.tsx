@@ -26,11 +26,12 @@ export default AlbumGroup
 
 const styles = StyleSheet.create({
     container:{
-
+        marginBottom: 10
     },
     title:{
         color:'#fff',
         fontWeight: 'bold',
         fontSize: 30,
+        margin: 5
     }
 });
