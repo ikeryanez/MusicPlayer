@@ -143,6 +143,7 @@ const HomeScreen = () => {
   return (
     <View style = {styles.container}>
       <FlatList
+            showsVerticalScrollIndicator={false}
             data={albumGroupList}
             renderItem={({ item }) => <AlbumGroup title={item.title} albumList={item.albumList}/>}
             keyExtractor={item => item.albumGroupId}

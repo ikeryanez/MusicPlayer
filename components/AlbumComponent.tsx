@@ -20,12 +20,13 @@ export default AlbumComponent
 const styles = StyleSheet.create({
   container: {
     width: 150,
-    margin:5
+    margin: 5
   },
   cover:{
     width: '100%',
     height:150,
     marginBottom: 5,
+    borderRadius:10
   },
   text:{
     color: '#b3b3b3',

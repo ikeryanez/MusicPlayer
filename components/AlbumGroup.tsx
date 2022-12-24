@@ -14,6 +14,7 @@ const AlbumGroup = (props: AlbumGroupProps) => {
         <Text style={styles.title}>{props.title}</Text>
         <FlatList
             horizontal
+            showsHorizontalScrollIndicator={false}
             data={props.albumList}
             renderItem={({ item }) => <AlbumComponent album={item}/>}
             keyExtractor={item => item.albumId}
