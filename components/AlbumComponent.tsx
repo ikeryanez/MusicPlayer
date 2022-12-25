@@ -1,5 +1,5 @@
-import React from 'react'
-import { Text, View, Image, StyleSheet } from 'react-native'
+import React, { useState } from 'react'
+import { Text, View, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import type { Album } from '../types'
 
 export type AlbumProps = {
@@ -7,11 +7,22 @@ export type AlbumProps = {
 }
 
 const AlbumComponent = (props: AlbumProps) => {
+
+  const [scale, setScale] = useState(1);
+
+  const onPress = () => {
+    console.warn('')
+  }
+
   return (
-    <View style = {styles.container}>
+    <TouchableOpacity activeOpacity={0.7} style={ { transform: [{ scale }] }}
+    onPressIn={() => setScale(0.9)}
+    onPressOut={() => setScale(1)}>
+      <View style = {styles.container}>
         <Image style = {styles.cover} source = {{uri: props.album.coverUrl}} />
         <Text numberOfLines={2} style = {styles.text}> {props.album.artists} </Text>
-    </View>
+      </View>
+    </TouchableOpacity>
   )
 }
 

@@ -12,7 +12,7 @@ const albumGroupList = [
       {
         albumId: '4',
         coverUrl: 'https://i.scdn.co/image/ab67706f00000003b1c15761720a3ba8d1e68228',
-        artists: 'Bad Bunny, J Balvin, Rauw Alejandrooooooooooooo'
+        artists: 'Bad Bunny, J Balvin, Rauw Alejandro'
       },
       {
         albumId: '5',

@@ -5,7 +5,7 @@ import AlbumComponent from './AlbumComponent'
 
 export type AlbumGroupProps = {
     title: string,
-    albumList: [Album],
+    albumList: Album[],
 }
 
 const AlbumGroup = (props: AlbumGroupProps) => {
