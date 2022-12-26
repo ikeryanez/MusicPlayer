@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import { useNavigation } from '@react-navigation/native'
+import React, { Component, useState } from 'react'
 import { Text, View, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import type { Album } from '../types'
 
@@ -10,14 +11,27 @@ const AlbumComponent = (props: AlbumProps) => {
 
   const [scale, setScale] = useState(1);
 
-  const onPress = () => {
-    console.warn('')
+  const navigation = useNavigation();
+
+  function handlePress(){
+    navigation.navigate('AlbumDetailScreen', {albumId: props.album.albumId});
+  }
+
+  function handlePressIn(){
+    setScale(0.9);
+  }
+
+  function handlePressOut(){
+    setScale(1);
   }
 
   return (
-    <TouchableOpacity activeOpacity={0.7} style={ { transform: [{ scale }] }}
-    onPressIn={() => setScale(0.9)}
-    onPressOut={() => setScale(1)}>
+    <TouchableOpacity 
+    onPress={handlePress} 
+    activeOpacity={0.9} 
+    style={ { transform: [{ scale }] }}
+    onPressIn={handlePressIn}
+    onPressOut={handlePressOut}>
       <View style = {styles.container}>
         <Image style = {styles.cover} source = {{uri: props.album.coverUrl}} />
         <Text numberOfLines={2} style = {styles.text}> {props.album.artists} </Text>

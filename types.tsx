@@ -35,8 +35,20 @@ export type RootTabScreenProps<Screen extends keyof RootTabParamList> = Composit
   NativeStackScreenProps<RootStackParamList>
 >;
 
+export type TabOneParamList = {
+  TabOneScreen: undefined;
+  AlbumDetailScreen: undefined;
+};
+
 export type Album = {
   albumId: string,
   coverUrl: string,
   artists: string,
+}
+
+export type Song = {
+  songId: string,
+  songName: string,
+  artists: string,
+  coverUrl: string
 }

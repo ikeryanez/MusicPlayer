@@ -17,8 +17,9 @@ import NotFoundScreen from '../screens/NotFoundScreen';
 import HomeScreen from '../screens/HomeScreen';
 import SearchScreen from '../screens/SearchScreen';
 import LibraryScreen from '../screens/LibraryScreen';
-import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
+import { RootStackParamList, RootTabParamList, RootTabScreenProps, TabOneParamList } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
+import AlbumDetailScreen from '../screens/AlbumDetailScreen';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -65,7 +66,7 @@ function BottomTabNavigator() {
       }}>
       <BottomTab.Screen
         name="TabOne"
-        component={HomeScreen}
+        component={TabOneNavigator}
         options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
           title: 'Home',
           tabBarIcon: ({ color }) => <Foundation name="home" size={30} style={{ marginBottom: -3 }} color={color} />,
@@ -102,6 +103,26 @@ function BottomTabNavigator() {
         }}
       />
     </BottomTab.Navigator>
+  );
+}
+
+const TabOneStack = createNativeStackNavigator<TabOneParamList>();
+
+function TabOneNavigator() {
+  return (
+    <TabOneStack.Navigator>
+      <TabOneStack.Screen
+        name="TabOneScreen"
+        component={HomeScreen}
+        options={{ headerTitle: 'Home' }}
+      />
+
+      <TabOneStack.Screen
+        name="AlbumDetailScreen"
+        component={AlbumDetailScreen}
+        options={{ headerTitle: 'Album' }}
+      />
+    </TabOneStack.Navigator>
   );
 }
 
