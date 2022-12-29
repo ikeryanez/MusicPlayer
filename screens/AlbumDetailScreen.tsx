@@ -1,6 +1,7 @@
 import { useRoute } from "@react-navigation/native";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
+import AlbumDetailHeader from "../components/AlbumDetailHeader";
 import AlbumSongItem from "../components/AlbumSongItem";
 import AlbumDetail from "../data/AlbumDetail";
 
@@ -10,8 +11,13 @@ const AlbumDetailScreen = () => {
     
   return (
     <View>
-      <Text style={styles.text}>Album Detail</Text>
-      <AlbumSongItem song={AlbumDetail.songs[0]}/>
+      <AlbumDetailHeader album={AlbumDetail}/>
+      <FlatList
+            showsVerticalScrollIndicator={false}
+            data={AlbumDetail.songs}
+            renderItem={({ item }) => <AlbumSongItem song={item}/>}
+            keyExtractor={item => item.songId}
+        />
     </View>
   );
 };

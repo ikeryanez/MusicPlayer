@@ -42,8 +42,10 @@ export type TabOneParamList = {
 
 export type Album = {
   albumId: string,
+  albumName: string,
   coverUrl: string,
   artists: string,
+  songs: Song[]
 }
 
 export type Song = {
