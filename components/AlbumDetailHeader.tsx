@@ -31,10 +31,10 @@ const AlbumDetailHeader = (props: Props) => {
             </View>
             <View style={styles.bottomRightContainer}>
                 <TouchableOpacity style={styles.touchableRight}>
-                    <FontAwesome name="play-circle" size={60} color="#81b71a" />
+                    <FontAwesome name="play-circle" size={60} color="#1ed760" />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.touchableRight}>
-                    <Ionicons name="shuffle" size={40} color="#81b71a" />
+                    <Ionicons name="shuffle" size={40} color="#1ed760" />
                 </TouchableOpacity>
             </View>
         </View>

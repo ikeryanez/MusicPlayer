@@ -11,8 +11,9 @@ const AlbumDetailScreen = () => {
     
   return (
     <View>
-      <AlbumDetailHeader album={AlbumDetail}/>
+      {/* <AlbumDetailHeader album={AlbumDetail}/> */}
       <FlatList
+            ListHeaderComponent={<AlbumDetailHeader album={AlbumDetail}/>}
             showsVerticalScrollIndicator={false}
             data={AlbumDetail.songs}
             renderItem={({ item }) => <AlbumSongItem song={item}/>}

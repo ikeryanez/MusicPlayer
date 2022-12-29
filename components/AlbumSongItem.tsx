@@ -17,7 +17,7 @@ const AlbumSongItem = (props: AlbumSongItemProps) => {
     if(playing){
       setColor("white");
     }else{
-      setColor("green")
+      setColor("#1ed760")
     }
   }
 
@@ -28,7 +28,7 @@ const AlbumSongItem = (props: AlbumSongItemProps) => {
       </View>
       <View style={styles.right}>
         <View style={styles.topRight}>
-          <MaterialIcons name="equalizer" size={24} color="green" style={ { display: playing ? 'flex' : 'none' }}/>
+          <MaterialIcons name="equalizer" size={24} color="#1ed760" style={ { display: playing ? 'flex' : 'none' }}/>
           <Text style={[styles.name, {color}]}>{props.song.songName}</Text>
         </View>
         <Text style={styles.artists}>{props.song.artists}</Text>
