@@ -23,16 +23,22 @@ const AlbumSongItem = (props: AlbumSongItemProps) => {
 
   return (
     <TouchableOpacity onPress={handlePress} style={styles.container}>
+
       <View>
         <Image style={styles.cover} source={{uri:props.song.coverUrl}} />
       </View>
+
       <View style={styles.right}>
+
         <View style={styles.topRight}>
           <MaterialIcons name="equalizer" size={24} color="#1ed760" style={ { display: playing ? 'flex' : 'none' }}/>
           <Text style={[styles.name, {color}]}>{props.song.songName}</Text>
         </View>
+
         <Text style={styles.artists}>{props.song.artists}</Text>
+        
       </View>
+
     </TouchableOpacity>
   )
 }
@@ -49,7 +55,8 @@ const styles = StyleSheet.create({
   },
   cover: {
     height: 50,
-    width: 50
+    width: 50,
+    borderRadius: 10
   },
   container: {
     margin: 15,
