@@ -46,7 +46,7 @@ export default AlbumDetailHeader
 
 const styles = StyleSheet.create({
     container: {
-        margin: 15
+        margin: 15,
     },
     imageContainer: {
         alignItems: 'center', 

@@ -10,6 +10,7 @@ export type AlbumProps = {
 const AlbumComponent = (props: AlbumProps) => {
 
   const [scale, setScale] = useState(1);
+  const [opacity, setOpacity] = useState(1);
 
   const navigation = useNavigation();
 
@@ -19,16 +20,18 @@ const AlbumComponent = (props: AlbumProps) => {
 
   function handlePressIn(){
     setScale(0.9);
+    setOpacity(0.5);
   }
 
   function handlePressOut(){
     setScale(1);
+    setOpacity(1);
   }
 
   return (
     <TouchableOpacity 
     onPress={handlePress} 
-    activeOpacity={0.9} 
+    activeOpacity={opacity} 
     style={ { transform: [{ scale }] }}
     onPressIn={handlePressIn}
     onPressOut={handlePressOut}>
