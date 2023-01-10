@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     position: 'absolute',
     bottom: 73,
-    backgroundColor: '#1ed760',
+    backgroundColor: '#3c3c3c',
     width: '95%',
     padding:10,
     margin: 5,

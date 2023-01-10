@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import AlbumComponent from '../components/AlbumComponent'
 import AlbumGroup from '../components/AlbumGroup'
 import { View, Text, StyleSheet, FlatList } from 'react-native'
 import { Album } from '../types'
 import AlbumGroupList from '../data/AlbumGroups'
+import HomeHeader from '../components/HomeHeader'
 
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}:any) => {
   return (
     <View style = {styles.container}>
+      <HomeHeader/>
       <FlatList
             showsVerticalScrollIndicator={false}
             data={AlbumGroupList}

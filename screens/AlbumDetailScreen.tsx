@@ -5,7 +5,7 @@ import AlbumDetailHeader from "../components/AlbumDetailHeader";
 import AlbumSongItem from "../components/AlbumSongItem";
 import AlbumDetail from "../data/AlbumDetail";
 
-const AlbumDetailScreen = () => {
+const AlbumDetailScreen = ({navigation}:any) => {
   
   const route = useRoute();
     
