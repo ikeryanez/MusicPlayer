@@ -5,13 +5,18 @@ import { View, Text, StyleSheet, FlatList } from 'react-native'
 import { Album } from '../types'
 import AlbumGroupList from '../data/AlbumGroups'
 import HomeHeader from '../components/HomeHeader'
+import LastAlbums from '../components/LastAlbums'
+import AlbumList from '../data/AlbumList'
+import HomeListHeader from '../components/HomeListHeader'
 
 
 const HomeScreen = ({navigation}:any) => {
   return (
     <View style = {styles.container}>
-      <HomeHeader/>
+      {/* <HomeHeader/>
+      <LastAlbums albumList={AlbumList}/> */}
       <FlatList
+            ListHeaderComponent={<HomeListHeader/>}
             showsVerticalScrollIndicator={false}
             data={AlbumGroupList}
             renderItem={({ item }) => <AlbumGroup title={item.title} albumList={item.albumList}/>}
@@ -28,5 +33,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop:80
   },
 });

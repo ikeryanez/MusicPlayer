@@ -30,9 +30,9 @@ const styles = StyleSheet.create({
         marginBottom: 10
     },
     title:{
-        color:'#fff',
+        color:'white',
         fontWeight: 'bold',
-        fontSize: 30,
+        fontSize: 25,
         margin: 5
     }
 });

@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { Song } from '../types'
 import { MaterialIcons } from '@expo/vector-icons';
+import Colors from '../constants/Colors';
 
 export type AlbumSongItemProps = {
     song: Song
@@ -50,7 +51,7 @@ const styles = StyleSheet.create({
     fontSize: 22
   },
   artists: {
-    color: '#b3b3b3',
+    color: Colors.textGrey,
     fontSize: 18
   },
   cover: {

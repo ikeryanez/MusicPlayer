@@ -52,9 +52,9 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        width: '100%',
         padding: 5,
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: 10
     },
     greeting: {
         color: 'white', 

@@ -63,6 +63,7 @@ function BottomTabNavigator() {
       initialRouteName="TabOne"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
+        headerShown: false
       }}>
       <BottomTab.Screen
         name="TabOne"
@@ -110,7 +111,7 @@ const TabOneStack = createNativeStackNavigator<TabOneParamList>();
 
 function TabOneNavigator() {
   return (
-    <TabOneStack.Navigator>
+    <TabOneStack.Navigator screenOptions={{headerShown:false}}>
       <TabOneStack.Screen
         name="TabOneScreen"
         component={HomeScreen}

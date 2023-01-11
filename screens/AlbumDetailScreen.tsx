@@ -10,7 +10,7 @@ const AlbumDetailScreen = ({navigation}:any) => {
   const route = useRoute();
     
   return (
-    <View>
+    <View style={styles.container}>
       {/* <AlbumDetailHeader album={AlbumDetail}/> */}
       <FlatList
             ListHeaderComponent={<AlbumDetailHeader album={AlbumDetail}/>}
@@ -29,4 +29,7 @@ const styles = StyleSheet.create({
   text: {
     color: "white",
   },
+  container: {
+    marginTop: 40
+  }
 });

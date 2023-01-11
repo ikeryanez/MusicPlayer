@@ -4,6 +4,7 @@ import { Song } from '../types'
 import { MaterialIcons } from '@expo/vector-icons';
 import song from '../data/Song';
 import { Entypo } from '@expo/vector-icons';
+import Colors from '../constants/Colors';
 
 const PlayingSong = () => {
 
@@ -29,9 +30,9 @@ const PlayingSong = () => {
         </View>
 
 
-      <View style={styles.buttons}>
+      <TouchableOpacity style={styles.buttons}>
         <Entypo name="controller-play" size={40} color="white" />
-      </View>
+      </TouchableOpacity>
 
     </TouchableOpacity>
   )
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     position: 'absolute',
     bottom: 73,
-    backgroundColor: '#3c3c3c',
+    backgroundColor: Colors.grey,
     width: '95%',
     padding:10,
     margin: 5,

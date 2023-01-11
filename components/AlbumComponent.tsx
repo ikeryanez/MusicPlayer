@@ -2,6 +2,7 @@ import { useNavigation } from '@react-navigation/native'
 import React, { Component, useState } from 'react'
 import { Text, View, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import type { Album } from '../types'
+import Colors from '../constants/Colors'
 
 export type AlbumProps = {
     album: Album
@@ -57,6 +58,6 @@ const styles = StyleSheet.create({
     borderRadius:10
   },
   text:{
-    color: '#b3b3b3',
+    color: Colors.textGrey,
   }
 });
