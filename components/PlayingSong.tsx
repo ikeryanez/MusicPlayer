@@ -2,10 +2,10 @@ import React, {useEffect, useState} from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { Song } from '../types'
 import { MaterialIcons } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons';
 import Colors from '../constants/Colors';
 import { Audio } from 'expo-av';
 import { Sound } from 'expo-av/build/Audio/Sound';
+import { FontAwesome } from '@expo/vector-icons';
 
 const song = {
   songId: '1',
@@ -39,16 +39,17 @@ const PlayingSong = () => {
     playSong();
   }, [])
 
-  const playPause = async ( ) => {
+  const playPause = async () => {
+    setIsPlaying(!isPlaying)
     if (!sound) {
       return;
     }
-   if (isPlaying) {
-     await sound.stopAsync();
+    if (isPlaying) {
+      await sound.stopAsync();
     } else {
-     await sound.playAsync();
+      await sound.playAsync();
     }
-  }
+  };
   
 
   return (
@@ -74,7 +75,11 @@ const PlayingSong = () => {
 
 
       <TouchableOpacity style={styles.buttons} onPress={playPause}>
-        <Entypo name="controller-play" size={40} color="white" />
+        {isPlaying ? (
+          <FontAwesome name="pause" size={30} color="white" />
+        ) : (
+          <FontAwesome name="play" size={30} color="white" />
+        )}
       </TouchableOpacity>
 
     </TouchableOpacity>
