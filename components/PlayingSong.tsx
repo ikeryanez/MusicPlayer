@@ -1,12 +1,55 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { Song } from '../types'
 import { MaterialIcons } from '@expo/vector-icons';
-import song from '../data/Song';
 import { Entypo } from '@expo/vector-icons';
 import Colors from '../constants/Colors';
+import { Audio } from 'expo-av';
+import { Sound } from 'expo-av/build/Audio/Sound';
+
+const song = {
+  songId: '1',
+  songName: 'Test Song',
+  artists: 'Artist',
+  songUrl: 'gs://musicplayer-62042.appspot.com/shakira.mp3',
+  coverUrl: 'https://i.scdn.co/image/ab67706f000000021f03c07b5df10a0dcf835e6d'
+}
 
 const PlayingSong = () => {
+
+  const [sound, setSound] = useState<Sound|null>(null);
+
+  const [isPlaying, setIsPlaying] = useState<boolean>(true);
+
+
+  const onPlaybackStatusUpdate = (status: any) => {
+    console.log(status)
+  } 
+  
+  const playSong = async () => {
+    const { sound: newSong } = await Sound.createAsync(
+      {uri: song.songUrl},
+      {shouldPlay: isPlaying},
+      onPlaybackStatusUpdate
+    )
+    setSound(newSong)
+  }
+
+  useEffect(() => {
+    playSong();
+  }, [])
+
+  const playPause = async ( ) => {
+    if (!sound) {
+      return;
+    }
+   if (isPlaying) {
+     await sound.stopAsync();
+    } else {
+     await sound.playAsync();
+    }
+  }
+  
 
   return (
     <TouchableOpacity style={styles.container}>
@@ -30,7 +73,7 @@ const PlayingSong = () => {
         </View>
 
 
-      <TouchableOpacity style={styles.buttons}>
+      <TouchableOpacity style={styles.buttons} onPress={playPause}>
         <Entypo name="controller-play" size={40} color="white" />
       </TouchableOpacity>
 

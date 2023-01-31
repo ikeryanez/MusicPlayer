@@ -52,5 +52,6 @@ export type Song = {
   songId: string,
   songName: string,
   artists: string,
+  songUrl: string,
   coverUrl: string
 }
