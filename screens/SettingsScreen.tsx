@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-const SettingsScreen = () => {
+const SettingsScreen = ({navigation}:any) => {
   const handleAccountPress = () => {
     // Acción a realizar al tocar el apartado de cuenta
   };
@@ -32,33 +32,33 @@ const SettingsScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Ajustes</Text>
+      <Text style={styles.header}>Settings</Text>
       <TouchableOpacity style={styles.sectionContainer} onPress={handleAccountPress}>
-        <Text style={styles.sectionHeader}>Cuenta</Text>
+        <Text style={styles.sectionHeader}>Account</Text>
         {/* Aquí puedes añadir componentes relacionados con la cuenta */}
       </TouchableOpacity>
       <TouchableOpacity style={styles.sectionContainer} onPress={handlePrivacyPress}>
-        <Text style={styles.sectionHeader}>Privacidad</Text>
+        <Text style={styles.sectionHeader}>Privacity</Text>
         {/* Aquí puedes añadir componentes relacionados con la privacidad */}
       </TouchableOpacity>
       <TouchableOpacity style={styles.sectionContainer} onPress={handleSecurityPress}>
-        <Text style={styles.sectionHeader}>Seguridad</Text>
+        <Text style={styles.sectionHeader}>Security</Text>
         {/* Aquí puedes añadir componentes relacionados con la seguridad */}
       </TouchableOpacity>
       <TouchableOpacity style={styles.sectionContainer} onPress={handleIdiomasPress}>
-        <Text style={styles.sectionHeader}>Idiomas</Text>
+        <Text style={styles.sectionHeader}>Languages</Text>
         {/* Aquí puedes añadir componentes relacionados con la seguridad */}
       </TouchableOpacity>
       <TouchableOpacity style={styles.sectionContainer} onPress={handleAlmacenamientoPress}>
-        <Text style={styles.sectionHeader}>Almacenamiento</Text>
+        <Text style={styles.sectionHeader}>Storage</Text>
         {/* Aquí puedes añadir componentes relacionados con la seguridad */}
       </TouchableOpacity>
       <TouchableOpacity style={styles.sectionContainer} onPress={handleInformacionPress}>
-        <Text style={styles.sectionHeader}>Informacion</Text>
+        <Text style={styles.sectionHeader}>Information</Text>
         {/* Aquí puedes añadir componentes relacionados con la seguridad */}
       </TouchableOpacity>
       <TouchableOpacity style={styles.sectionContainer} onPress={handleCerrarSesionPress}>
-        <Text style={styles.sectionHeader}>Cerrar sesion</Text>
+        <Text style={styles.sectionHeader}>Sign off</Text>
         {/* Aquí puedes añadir componentes relacionados con el perfil */}
       </TouchableOpacity>
     </View>
