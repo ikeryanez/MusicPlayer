@@ -6,7 +6,7 @@ import { Album } from '../types'
 import AlbumGroupList from '../data/AlbumGroups'
 import HomeHeader from '../components/HomeHeader'
 import LastAlbums from '../components/LastAlbums'
-import AlbumList from '../data/AlbumList'
+import Albums from '../data/Albums'
 import HomeListHeader from '../components/HomeListHeader'
 
 

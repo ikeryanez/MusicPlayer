@@ -6,14 +6,16 @@ import Colors from '../constants/Colors';
 import { Audio } from 'expo-av';
 import { Sound } from 'expo-av/build/Audio/Sound';
 import { FontAwesome } from '@expo/vector-icons';
+import Songs from '../data/Songs';
 
 const song = {
   songId: '1',
-  songName: 'Test Song',
-  artists: 'Artist',
-  songUrl: 'gs://musicplayer-62042.appspot.com/shakira.mp3',
-  coverUrl: 'https://i.scdn.co/image/ab67706f000000021f03c07b5df10a0dcf835e6d'
+  songName: 'Shakira BZRP Session',
+  artists: 'Shakira, Bizarrap',
+  songUrl: './songs/shakira.mp3',
+  coverUrl: 'https://i1.sndcdn.com/artworks-02I0xQ5birip-0-t500x500.jpg'
 }
+
 
 const PlayingSong = () => {
 
@@ -21,35 +23,37 @@ const PlayingSong = () => {
 
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
 
-
   const onPlaybackStatusUpdate = (status: any) => {
     console.log(status)
   } 
   
+
   const playSong = async () => {
-    const { sound: newSong } = await Sound.createAsync(
-      {uri: song.songUrl},
-      {shouldPlay: isPlaying},
-      onPlaybackStatusUpdate
-    )
-    setSound(newSong)
+    const soundObject = new Audio.Sound();
+    await soundObject.loadAsync(require('./songs/shakira.mp3'));
+    setSound(soundObject);
+    if (sound) {
+      await sound.playAsync();
+    }
+    setIsPlaying(true);
   }
 
   useEffect(() => {
     playSong();
   }, [])
 
+
   const playPause = async () => {
-    setIsPlaying(!isPlaying)
     if (!sound) {
       return;
     }
     if (isPlaying) {
       await sound.stopAsync();
-    } else {
+    }else{
       await sound.playAsync();
     }
-  };
+    setIsPlaying(!isPlaying);
+  }
   
 
   return (

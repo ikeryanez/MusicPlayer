@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import AlbumList from "../data/AlbumList";
+import Albums from "../data/Albums";
 import HomeHeader from "./HomeHeader";
 import LastAlbums from "./LastAlbums";
 
@@ -11,7 +11,7 @@ const HomeListHeader = () => {
         <HomeHeader />
       </View>
       <View>
-        <LastAlbums albumList={AlbumList} />
+        <LastAlbums albumList={Albums} />
       </View>
     </View>
   );
