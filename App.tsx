@@ -7,6 +7,11 @@ import Navigation from './navigation';
 import PlayingSong from './components/PlayingSong';
 import { StyleSheet, View } from 'react-native';
 import { SongProvider } from './Context';
+import LoginScreen from './screens/LoginScreen';
+
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from './Firebase';
 
 export default function App() {
   const isLoadingComplete = useCachedResources();

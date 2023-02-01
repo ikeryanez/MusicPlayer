@@ -27,6 +27,7 @@ import SecurityScreen from '../screens/SecurityScreen';
 import LanguageSettingsScreen from '../screens/LanguageSettingsScreen';
 import StorageScreen from '../screens/StorageScreen';
 import InformationScreen from '../screens/InformationScreen';
+import LoginScreen from '../screens/LoginScreen';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -119,6 +120,12 @@ const TabOneStack = createNativeStackNavigator<TabOneParamList>();
 function TabOneNavigator() {
   return (
     <TabOneStack.Navigator screenOptions={{headerShown:false}}>
+      <TabOneStack.Screen
+        name="LoginScreen"
+        component={LoginScreen}
+        options={{ headerTitle: 'Home' }}
+      />
+
       <TabOneStack.Screen
         name="TabOneScreen"
         component={HomeScreen}
