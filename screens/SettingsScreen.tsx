@@ -58,7 +58,7 @@ const SettingsScreen = ({navigation}:any) => {
         {/* Aquí puedes añadir componentes relacionados con la seguridad */}
       </TouchableOpacity>
       <TouchableOpacity style={styles.sectionContainer} onPress={handleCerrarSesionPress}>
-        <Text style={styles.sectionHeader}>Sign off</Text>
+        <Text style={styles.sectionHeader}>Logout</Text>
         {/* Aquí puedes añadir componentes relacionados con el perfil */}
       </TouchableOpacity>
     </View>
