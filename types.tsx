@@ -38,6 +38,13 @@ export type RootTabScreenProps<Screen extends keyof RootTabParamList> = Composit
 export type TabOneParamList = {
   TabOneScreen: undefined;
   AlbumDetailScreen: undefined;
+  SettingsScreen: undefined;
+  AccountScreen: undefined;
+  PrivacityScreen: undefined;
+  SecurityScreen: undefined;
+  LanguagesScreen: undefined;
+  StorageScreen: undefined;
+  InformationScreen: undefined;
 };
 
 export type Album = {

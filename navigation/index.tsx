@@ -20,6 +20,13 @@ import LibraryScreen from '../screens/LibraryScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps, TabOneParamList } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 import AlbumDetailScreen from '../screens/AlbumDetailScreen';
+import SettingsScreen from '../screens/SettingsScreen';
+import AccountScreen from '../screens/AccountScreen';
+import PrivacityScreen from '../screens/PrivacityScreen';
+import SecurityScreen from '../screens/SecurityScreen';
+import LanguageSettingsScreen from '../screens/LanguageSettingsScreen';
+import StorageScreen from '../screens/StorageScreen';
+import InformationScreen from '../screens/InformationScreen';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -122,6 +129,42 @@ function TabOneNavigator() {
         name="AlbumDetailScreen"
         component={AlbumDetailScreen}
         options={{ headerTitle: 'Album' }}
+      />
+
+      <TabOneStack.Screen
+        name="SettingsScreen"
+        component={SettingsScreen}
+        options={{ headerTitle: 'Settings' }}
+      />
+      <TabOneStack.Screen
+        name="AccountScreen"
+        component={AccountScreen}
+        options={{ headerTitle: 'Settings' }}
+      />
+      <TabOneStack.Screen
+        name="PrivacityScreen"
+        component={PrivacityScreen}
+        options={{ headerTitle: 'Settings' }}
+      />
+      <TabOneStack.Screen
+        name="SecurityScreen"
+        component={SecurityScreen}
+        options={{ headerTitle: 'Settings' }}
+      />
+      <TabOneStack.Screen
+        name="LanguagesScreen"
+        component={LanguageSettingsScreen}
+        options={{ headerTitle: 'Settings' }}
+      />
+      <TabOneStack.Screen
+        name="StorageScreen"
+        component={StorageScreen}
+        options={{ headerTitle: 'Settings' }}
+      />
+      <TabOneStack.Screen
+        name="InformationScreen"
+        component={InformationScreen}
+        options={{ headerTitle: 'Settings' }}
       />
     </TabOneStack.Navigator>
   );

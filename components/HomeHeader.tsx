@@ -3,8 +3,11 @@ import { StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback } from "re
 import { View } from "./Themed";
 import { Entypo } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native'
 
 const HomeHeader = () => {
+
+    const navigation = useNavigation();
 
     const [greeting, setGreeting] = useState<string>('');
 
@@ -21,6 +24,10 @@ const HomeHeader = () => {
       }
     }, []);
 
+    const settingsPressed = () => {
+      navigation.navigate('SettingsScreen')
+    }
+
   return (
     <View style={styles.container}>
 
@@ -36,7 +43,7 @@ const HomeHeader = () => {
                 <Entypo name="back-in-time" size={30} color="white" />
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={settingsPressed}>
                 <Ionicons name="settings-outline" size={30} color="white" />
             </TouchableOpacity>
 

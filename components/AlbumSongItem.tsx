@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { Song } from '../types'
 import { MaterialIcons } from '@expo/vector-icons';
@@ -19,6 +19,8 @@ const AlbumSongItem = (props: AlbumSongItemProps) => {
   const [playing, setPlaying] = useState(false);
   const [color, setColor] = useState('white');
 
+
+
   const handlePress = () => {
     console.log('Id de cancion:'+ props.song.songId);
     const newId: string = props.song.songId;
@@ -33,6 +35,11 @@ const AlbumSongItem = (props: AlbumSongItemProps) => {
     // }
   }
 
+  useEffect(() => {
+    actualSongId===props.song.songId ? setColor("#1ed760") : setColor("white")
+  }, [actualSongId])
+  
+
   return (
     <TouchableOpacity onPress={handlePress} style={styles.container}>
 
@@ -43,7 +50,7 @@ const AlbumSongItem = (props: AlbumSongItemProps) => {
       <View style={styles.right}>
 
         <View style={styles.topRight}>
-          <MaterialIcons name="equalizer" size={24} color="#1ed760" style={ { display: playing ? 'flex' : 'none' }}/>
+          <MaterialIcons name="equalizer" size={24} color="#1ed760" style={ { display: actualSongId===props.song.songId ? 'flex' : 'none' }}/>
           <Text style={[styles.name, {color}]}>{props.song.songName}</Text>
         </View>
 
@@ -59,7 +66,7 @@ export default AlbumSongItem
 
 const styles = StyleSheet.create({
   name: {
-    fontSize: 22
+    fontSize: 22,
   },
   artists: {
     color: Colors.textGrey,
