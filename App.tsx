@@ -6,6 +6,7 @@ import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
 import PlayingSong from './components/PlayingSong';
 import { StyleSheet, View } from 'react-native';
+import { SongProvider } from './Context';
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -15,13 +16,15 @@ export default function App() {
     return null;
   } else {
     return (
-      <SafeAreaProvider>
-        <Navigation colorScheme={colorScheme} />
-        <StatusBar />
-        <View style={styles.container}>
-          <PlayingSong />
-        </View>
-      </SafeAreaProvider>
+      <SongProvider>
+        <SafeAreaProvider>
+          <Navigation colorScheme={colorScheme} />
+          <StatusBar />
+          <View style={styles.container}>
+            <PlayingSong />
+          </View>
+        </SafeAreaProvider>
+      </SongProvider>
     );
   }
 }

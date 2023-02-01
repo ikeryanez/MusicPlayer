@@ -1,8 +1,9 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { Song } from '../types'
 import { MaterialIcons } from '@expo/vector-icons';
 import Colors from '../constants/Colors';
+import { SongContext } from '../Context';
 
 export type AlbumSongItemProps = {
     song: Song
@@ -10,16 +11,26 @@ export type AlbumSongItemProps = {
 
 const AlbumSongItem = (props: AlbumSongItemProps) => {
 
+  const {
+    actualSongId,
+    setActualSongId
+  } = useContext(SongContext);
+
   const [playing, setPlaying] = useState(false);
   const [color, setColor] = useState('white');
 
   const handlePress = () => {
-    setPlaying(!playing)
-    if(playing){
-      setColor("white");
-    }else{
-      setColor("#1ed760")
-    }
+    console.log('Id de cancion:'+ props.song.songId);
+    const newId: string = props.song.songId;
+    console.log('Id var newId:' + newId)
+    setActualSongId(newId)
+    console.log('Id de cancion de contexto nueva:' + actualSongId)
+    // setPlaying(!playing)
+    // if(playing){
+    //   setColor("white");
+    // }else{
+    //   setColor("#1ed760")
+    // }
   }
 
   return (
